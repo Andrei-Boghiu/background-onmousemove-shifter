@@ -1,0 +1,102 @@
+:root {
+    --purple: rgb(123, 31, 162);
+    --violet: rgb(103, 58, 183);
+    --darkviolet: rgb(92, 53, 159);
+    --pink: rgb(244, 143, 177);
+    --blue: rgb(27, 64, 143);
+}
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+body {  
+    margin: 0px;
+  }
+
+.side {
+    display: grid;
+    height: 100vh;
+    overflow: hidden;
+    place-items: center;
+    position: absolute;
+    width: 100%;
+  }
+  
+.title {
+    font-family: "Rubik", sans-serif;
+    font-size: 8vw;
+    width: 80vw;
+    --text-width: 70vw;
+    margin: 0 calc((100vw - var(--text-width)) / 2);
+  }
+  
+.fancy {
+    font-size: 1.3em;
+    line-height: 0.8em;
+  }
+/* Left Side 
+*******************************************/
+ #left-side {
+    background: linear-gradient(
+      to right,
+      rgb(78, 212, 167),
+      rgb(139, 96, 225)
+      );
+    z-index: 2;
+  }
+  
+  #left-side .title {  
+    color: white;  
+  }
+  
+  #left-side .fancy {
+    animation: background-pan 4s linear infinite;
+    background: linear-gradient(
+        to right,
+        var(--purple),
+        var(--violet),
+        var(--pink),
+        var(--purple)
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+    font-family: cursive, sans-serif;
+  }
+/* Right Side 
+*******************************************/
+  #right-side {
+    background: linear-gradient(
+      to right,
+      #0a0129,
+      #230574
+      );
+  }
+  
+  #right-side .title {
+    color: white;
+  }
+  
+  #right-side .fancy {
+    animation: background-pan 4s linear infinite;
+    background: linear-gradient(
+        to right,
+        var(--blue),
+        var(--darkviolet),
+        var(--pink),
+        var(--blue)
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+    font-family: cursive, sans-serif;
+  }
